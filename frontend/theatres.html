@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Theatres - MovieBook</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🎬 MovieBook
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="movies.html">Movies</a>
+
+            <a href="history.html">My Bookings</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Theatre Section -->
+
+    <section class="section">
+
+        <h2>Select Theatre</h2>
+
+        <p id="locationText"></p>
+
+
+        <div id="theatreList"
+             class="card-grid">
+
+            <div class="loading">
+                Loading theatres...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JavaScript -->
+
+    <script src="js/config.js"></script>
+
+    <script src="js/api.js"></script>
+
+    <script src="js/theatres.js"></script>
+
+</body>
+
+</html>
