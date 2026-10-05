@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Payment - MovieBook</title>
+
+<link rel="stylesheet"
+      href="css/style.css">
+
+<link rel="stylesheet"
+      href="./css/payment.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🎬 MovieBook
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="movies.html">
+                Movies
+            </a>
+
+            <a href="history.html">
+                My Bookings
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= PAYMENT PAGE ================= -->
+
+    <main class="payment-page">
+
+        <div class="payment-container">
+
+
+            <!-- ================= LEFT ================= -->
+
+            <section class="payment-options">
+
+                <h2>
+                    Payment Options
+                </h2>
+
+
+                <div class="payment-methods">
+
+
+                    <button
+                        class="payment-method active"
+                        data-method="upi">
+
+                        <span class="payment-icon">
+                            UPI
+                        </span>
+
+                        <span>
+                            Pay by any UPI App
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="payment-method"
+                        data-method="card">
+
+                        <span class="payment-icon">
+                            💳
+                        </span>
+
+                        <span>
+                            Debit / Credit Card
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="payment-method"
+                        data-method="wallet">
+
+                        <span class="payment-icon">
+                            📱
+                        </span>
+
+                        <span>
+                            Mobile Wallets
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="payment-method"
+                        data-method="voucher">
+
+                        <span class="payment-icon">
+                            🎁
+                        </span>
+
+                        <span>
+                            Gift Voucher
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="payment-method"
+                        data-method="netbanking">
+
+                        <span class="payment-icon">
+                            🏦
+                        </span>
+
+                        <span>
+                            Net Banking
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+
+                <!-- PAYMENT CONTENT -->
+
+                <div class="payment-content">
+
+                    <div id="upiPayment"
+                         class="payment-panel active">
+
+                        <h3>
+                            Pay by any UPI App
+                        </h3>
+
+                        <div class="demo-payment-box">
+
+                            <div class="qr-icon">
+                                ▦
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Scan QR code
+                                </strong>
+
+                                <p>
+                                    Demo payment — no real
+                                    money will be charged.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="upi-input">
+
+                            <input
+                                type="text"
+                                id="upiId"
+                                placeholder="Enter UPI ID">
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="cardPayment"
+                         class="payment-panel">
+
+                        <h3>
+                            Debit / Credit Card
+                        </h3>
+
+                        <input
+                            type="text"
+                            placeholder="Card Number"
+                            maxlength="19">
+
+                        <div class="card-row">
+
+                            <input
+                                type="text"
+                                placeholder="MM / YY">
+
+                            <input
+                                type="password"
+                                placeholder="CVV"
+                                maxlength="3">
+
+                        </div>
+
+                        <input
+                            type="text"
+                            placeholder="Card Holder Name">
+
+                    </div>
+
+
+                    <div id="walletPayment"
+                         class="payment-panel">
+
+                        <h3>
+                            Mobile Wallets
+                        </h3>
+
+                        <select>
+
+                            <option>
+                                Select Wallet
+                            </option>
+
+                            <option>
+                                Demo Wallet
+                            </option>
+
+                            <option>
+                                Mobile Wallet
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div id="voucherPayment"
+                         class="payment-panel">
+
+                        <h3>
+                            Gift Voucher
+                        </h3>
+
+                        <input
+                            type="text"
+                            placeholder="Enter Voucher Code">
+
+                    </div>
+
+
+                    <div id="netbankingPayment"
+                         class="payment-panel">
+
+                        <h3>
+                            Net Banking
+                        </h3>
+
+                        <select>
+
+                            <option>
+                                Select Bank
+                            </option>
+
+                            <option>
+                                Demo Bank
+                            </option>
+
+                            <option>
+                                State Bank
+                            </option>
+
+                            <option>
+                                Other Bank
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= RIGHT ================= -->
+
+            <aside class="order-summary">
+
+                <div class="movie-summary">
+
+                    <div class="summary-title-row">
+
+                        <h2 id="movieName">
+                            Movie Ticket
+                        </h2>
+
+                        <span id="ticketCount">
+                            0
+                        </span>
+
+                    </div>
+
+
+                    <p id="showDetails">
+                        Show details
+                    </p>
+
+
+                    <p id="theatreDetails">
+                        Theatre
+                    </p>
+
+
+                    <p id="seatDetails">
+                        Seats
+                    </p>
+
+                </div>
+
+
+                <div class="price-summary">
+
+                    <div>
+                        <span>
+                            Ticket(s)
+                        </span>
+
+                        <strong>
+                            ₹<span id="ticketAmount">
+                                0
+                            </span>
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            Convenience Fee
+                        </span>
+
+                        <strong>
+                            ₹<span id="convenienceFee">
+                                0
+                            </span>
+                        </strong>
+                    </div>
+
+
+                    <div class="price-divider"></div>
+
+
+                    <div class="order-total">
+
+                        <span>
+                            Order Total
+                        </span>
+
+                        <strong>
+                            ₹<span id="orderTotal">
+                                0
+                            </span>
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-summary">
+
+                    <h3>
+                        Booking Details
+                    </h3>
+
+                    <p id="customerName">
+                        Customer
+                    </p>
+
+                    <p id="customerEmail">
+                        Email
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="payButton"
+                    class="pay-button">
+
+                    Pay ₹<span id="payAmount">
+                        0
+                    </span>
+
+                </button>
+
+
+                <p class="demo-payment-note">
+
+                    🔒 Secure demo payment
+
+                </p>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+   <script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/payment.js"></script>
+
+</body>
+
+</html>

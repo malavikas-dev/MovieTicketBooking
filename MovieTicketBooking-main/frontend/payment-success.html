@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Payment Successful - MovieBook</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/payment.css">
+
+    <style>
+
+        .payment-success-page {
+            min-height: calc(100vh - 70px);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #f3f5f9;
+
+            padding: 30px 20px;
+        }
+
+
+        .success-card {
+            width: 100%;
+            max-width: 520px;
+
+            background: #ffffff;
+
+            border-radius: 12px;
+
+            border: 1px solid #e2e5e9;
+
+            padding: 45px 35px;
+
+            text-align: center;
+
+            box-shadow:
+                0 8px 30px rgba(0, 0, 0, 0.06);
+        }
+
+
+        .success-icon {
+            width: 75px;
+            height: 75px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #e8f8ee;
+
+            color: #16a34a;
+
+            font-size: 40px;
+
+            font-weight: 700;
+        }
+
+
+        .success-card h1 {
+            margin: 0 0 10px;
+
+            color: #222;
+
+            font-size: 28px;
+        }
+
+
+        .success-message {
+            margin: 0 0 28px;
+
+            color: #666;
+
+            font-size: 14px;
+        }
+
+
+        .success-details {
+            text-align: left;
+
+            border-top: 1px solid #eeeeee;
+
+            border-bottom: 1px solid #eeeeee;
+
+            padding: 20px 0;
+
+            margin-bottom: 25px;
+        }
+
+
+        .success-detail-row {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin: 11px 0;
+
+            font-size: 14px;
+        }
+
+
+        .success-detail-row span:first-child {
+            color: #777;
+        }
+
+
+        .success-detail-row span:last-child {
+            color: #222;
+
+            font-weight: 600;
+
+            text-align: right;
+        }
+
+
+        .success-status {
+            display: inline-block;
+
+            padding: 6px 14px;
+
+            border-radius: 20px;
+
+            background: #e8f8ee;
+
+            color: #15803d;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+
+        .success-actions {
+            display: flex;
+
+            gap: 12px;
+
+            justify-content: center;
+        }
+
+
+        .success-action {
+            flex: 1;
+
+            min-height: 45px;
+
+            border-radius: 6px;
+
+            border: 1px solid #e50914;
+
+            background: #ffffff;
+
+            color: #e50914;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            text-decoration: none;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            cursor: pointer;
+        }
+
+
+        .success-action.primary {
+            background: #e50914;
+
+            color: #ffffff;
+        }
+
+
+        .success-action:hover {
+            opacity: 0.9;
+        }
+
+
+        @media (max-width: 600px) {
+
+            .success-card {
+                padding: 35px 20px;
+            }
+
+            .success-actions {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🎬 MovieBook
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="movies.html">
+                Movies
+            </a>
+
+            <a href="history.html">
+                My Bookings
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= SUCCESS ================= -->
+
+    <main class="payment-success-page">
+
+        <div class="success-card">
+
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <h1>
+                Payment Successful!
+            </h1>
+
+
+            <p class="success-message">
+                Your movie tickets have been booked successfully.
+            </p>
+
+
+            <div class="success-details">
+
+
+                <div class="success-detail-row">
+
+                    <span>
+                        Booking ID
+                    </span>
+
+                    <span id="bookingId">
+                        --
+                    </span>
+
+                </div>
+
+
+                <div class="success-detail-row">
+
+                    <span>
+                        Payment ID
+                    </span>
+
+                    <span id="paymentId">
+                        --
+                    </span>
+
+                </div>
+
+
+                <div class="success-detail-row">
+
+                    <span>
+                        Payment Method
+                    </span>
+
+                    <span id="paymentMethod">
+                        --
+                    </span>
+
+                </div>
+
+
+                <div class="success-detail-row">
+
+                    <span>
+                        Amount Paid
+                    </span>
+
+                    <span>
+                        ₹<span id="paidAmount">
+                            0
+                        </span>
+                    </span>
+
+                </div>
+
+
+                <div class="success-detail-row">
+
+                    <span>
+                        Status
+                    </span>
+
+                    <span>
+
+                        <span class="success-status">
+                            PAID
+                        </span>
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="success-actions">
+
+                <a
+                    href="index.html"
+                    class="success-action">
+
+                    Home
+
+                </a>
+
+
+                <a
+                    href="history.html"
+                    class="success-action primary">
+
+                    My Bookings
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const bookingId =
+                    localStorage.getItem(
+                        "bookingId"
+                    ) || "--";
+
+
+                const paymentId =
+                    localStorage.getItem(
+                        "paymentId"
+                    ) || "--";
+
+
+                const paymentMethod =
+                    localStorage.getItem(
+                        "paymentMethod"
+                    ) || "--";
+
+
+                const paidAmount =
+                    Number(
+                        localStorage.getItem(
+                            "paidAmount"
+                        )
+                    ) || 0;
+
+
+                document.getElementById(
+                    "bookingId"
+                ).textContent =
+                    bookingId;
+
+
+                document.getElementById(
+                    "paymentId"
+                ).textContent =
+                    paymentId;
+
+
+                document.getElementById(
+                    "paymentMethod"
+                ).textContent =
+                    formatPaymentMethod(
+                        paymentMethod
+                    );
+
+
+                document.getElementById(
+                    "paidAmount"
+                ).textContent =
+                    paidAmount.toFixed(2);
+
+            }
+        );
+
+
+        function formatPaymentMethod(
+            method
+        ) {
+
+            const names = {
+
+                upi: "UPI",
+
+                card: "Debit / Credit Card",
+
+                wallet: "Mobile Wallet",
+
+                voucher: "Gift Voucher",
+
+                netbanking: "Net Banking"
+
+            };
+
+
+            return names[method]
+                || method;
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

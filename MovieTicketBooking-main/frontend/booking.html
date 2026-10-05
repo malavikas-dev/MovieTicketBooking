@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Booking Summary - MovieBook</title>
+
+    <!-- Main MovieBook Theme -->
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <!-- Booking Page Styling -->
+    <link rel="stylesheet"
+          href="css/booking.css">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🎬 MovieBook
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="movies.html">
+                Movies
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         BOOKING PAGE
+         ===================================================== -->
+
+    <main class="booking-page">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="booking-header">
+
+            <div class="booking-icon">
+                🎟️
+            </div>
+
+            <h1>
+                Booking Summary
+            </h1>
+
+            <p>
+                REVIEW YOUR TICKET DETAILS
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             BOOKING CARD
+             ================================================= -->
+
+        <div class="booking-wrapper">
+
+
+            <!-- LEFT SIDE -->
+            <div class="booking-details">
+
+
+                <!-- MOVIE -->
+
+                <div class="detail-section movie-section">
+
+                    <span class="detail-label">
+                        MOVIE
+                    </span>
+
+                    <h2 id="movieName">
+                        Loading...
+                    </h2>
+
+                </div>
+
+
+                <!-- SHOWTIME -->
+
+                <div class="detail-row">
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            SHOWTIME
+                        </span>
+
+                        <p id="showTime">
+                            Loading...
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            SELECTED SEATS
+                        </span>
+
+                        <p id="seatNames">
+                            Loading...
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DIVIDER -->
+
+                <div class="booking-divider"></div>
+
+
+                <!-- CUSTOMER DETAILS -->
+
+                <div class="customer-section">
+
+                    <div class="section-title">
+                        Customer Details
+                    </div>
+
+
+                    <!-- CUSTOMER NAME -->
+
+                    <div class="input-group">
+
+                        <label for="customerName">
+                            Customer Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customerName"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- CUSTOMER EMAIL -->
+
+                    <div class="input-group">
+
+                        <label for="customerEmail">
+                            Customer Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="customerEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 RIGHT SIDE — TICKET SUMMARY
+                 ================================================= -->
+
+            <div class="booking-summary">
+
+
+                <div class="summary-title">
+
+                    <span>
+                        MOVIE TICKET
+                    </span>
+
+                </div>
+
+
+                <div class="ticket-line"></div>
+
+
+                <div class="summary-content">
+
+                    <span class="summary-label">
+                        TOTAL AMOUNT
+                    </span>
+
+                    <div class="total-price">
+
+                        ₹<span id="totalAmount">
+                            0
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ticket-divider"></div>
+
+
+                <div class="ticket-note">
+
+                    🎬 Your seat is reserved once
+                    the booking is confirmed.
+
+                </div>
+
+
+                <!-- CONFIRM BUTTON -->
+
+                <button
+                    class="confirm-btn"
+                    onclick="confirmBooking()">
+
+                    Confirm Booking
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- BACK BUTTON -->
+
+        <div class="back-home">
+
+            <a href="movies.html">
+
+                ← Back to Movies
+
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="js/config.js"></script>
+
+    <script src="js/api.js"></script>
+
+    <script src="js/booking.js"></script>
+
+
+</body>
+
+</html>

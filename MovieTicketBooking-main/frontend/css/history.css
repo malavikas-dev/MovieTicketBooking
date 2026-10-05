@@ -1,0 +1,558 @@
+/* =========================================================
+   MOVIEBOOK — MY BOOKINGS
+   Vintage Movie Ticket Style
+   Matches MovieBook Theme
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.history-page {
+
+    min-height: calc(100vh - 68px);
+
+    background: #f5f6f8;
+
+    padding: 45px 5% 70px;
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.history-header {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+.history-header .ticket-icon {
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.history-header h1 {
+
+    margin: 0;
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    color: #1f2937;
+
+}
+
+
+.history-header p {
+
+    margin-top: 8px;
+
+    color: #8a919b;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.history-container {
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   BOOKING CARD
+   ========================================================= */
+
+.booking-card {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        220px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe3e8;
+
+    border-radius: 10px;
+
+    margin-bottom: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+/* Hover */
+
+.booking-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 25px rgba(0, 0, 0, 0.08);
+
+}
+
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+.booking-info {
+
+    padding: 25px 30px;
+
+}
+
+
+/* Small cinema label */
+
+.booking-label {
+
+    font-size: 11px;
+
+    color: #999;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 7px;
+
+}
+
+
+/* Movie */
+
+.booking-card h3 {
+
+    margin: 0 0 18px;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    color: #202832;
+
+}
+
+
+/* Details */
+
+.booking-card p {
+
+    margin: 8px 0;
+
+    color: #687280;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+
+.booking-card strong {
+
+    color: #303846;
+
+}
+
+
+/* =========================================================
+   RED ACCENT
+   ========================================================= */
+
+.booking-card .movie-accent {
+
+    width: 45px;
+
+    height: 3px;
+
+    background: #e50914;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =========================================================
+   RIGHT TICKET STUB
+   ========================================================= */
+
+.booking-price {
+
+    position: relative;
+
+    padding: 25px;
+
+    border-left: 1px dashed #cfd4da;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background: #fafafa;
+
+}
+
+
+/* Vertical perforation */
+
+.booking-price::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -1px;
+
+    top: 15px;
+
+    bottom: 15px;
+
+    border-left: 1px dashed #cfd4da;
+
+}
+
+
+/* Ticket number */
+
+.ticket-number {
+
+    font-size: 10px;
+
+    color: #999;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* Price */
+
+.booking-price .price {
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    color: #202832;
+
+    margin: 5px 0 14px;
+
+}
+
+
+/* Status */
+
+.booking-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    background: #f0f8f2;
+
+    color: #287a3e;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   TICKET CUTOUTS
+   ========================================================= */
+
+.booking-card::before,
+.booking-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 24px;
+
+    height: 24px;
+
+    background: #f5f6f8;
+
+    border-radius: 50%;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 2;
+
+}
+
+
+.booking-card::before {
+
+    left: -13px;
+
+}
+
+
+.booking-card::after {
+
+    right: -13px;
+
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.loading {
+
+    padding: 70px 20px;
+
+    text-align: center;
+
+    color: #777;
+
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-bookings {
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e5ea;
+
+    border-radius: 10px;
+
+    color: #777;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE LAPTOP
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .history-page {
+
+        padding: 35px 25px 60px;
+
+    }
+
+    .history-container {
+
+        max-width: 850px;
+
+    }
+
+    .booking-card {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            190px;
+
+    }
+
+    .booking-info {
+
+        padding: 22px;
+
+    }
+
+    .booking-price {
+
+        padding: 20px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .history-page {
+
+        padding: 28px 15px 50px;
+
+    }
+
+    .history-header {
+
+        margin-bottom: 25px;
+
+    }
+
+    .history-header h1 {
+
+        font-size: 28px;
+
+    }
+
+    .history-header p {
+
+        font-size: 10px;
+
+        letter-spacing: 2px;
+
+    }
+
+    .booking-card {
+
+        display: block;
+
+        border-radius: 10px;
+
+    }
+
+    .booking-info {
+
+        padding: 20px;
+
+    }
+
+    .booking-price {
+
+        border-left: none;
+
+        border-top: 1px dashed #cfd4da;
+
+        padding: 17px 20px;
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        text-align: left;
+
+    }
+
+    .booking-price::before {
+
+        display: none;
+
+    }
+
+    .booking-card h3 {
+
+        font-size: 20px;
+
+    }
+
+    .booking-card p {
+
+        font-size: 13px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .history-page {
+
+        padding-left: 10px;
+
+        padding-right: 10px;
+
+    }
+
+    .history-header h1 {
+
+        font-size: 25px;
+
+    }
+
+    .booking-info {
+
+        padding: 17px;
+
+    }
+
+}
+.qr-code {
+    margin: 0 auto 14px;
+    padding: 8px;
+    background: #ffffff;
+    border-radius: 6px;
+}
+
+.ticket-number {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #8a929d;
+    margin-bottom: 8px;
+}

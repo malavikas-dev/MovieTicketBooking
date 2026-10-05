@@ -1,0 +1,752 @@
+/* =========================================================
+   MOVIEBOOK — BOOKING SUMMARY
+   Premium Cinema Ticket Style
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.booking-page {
+
+    min-height: calc(100vh - 68px);
+
+    background: #f6f7f9;
+
+    padding: 55px 5% 70px;
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.booking-header {
+
+    text-align: center;
+
+    margin-bottom: 38px;
+
+}
+
+
+.booking-icon {
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.booking-header h1 {
+
+    margin: 0;
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    color: #1f2937;
+
+}
+
+
+.booking-header p {
+
+    margin-top: 10px;
+
+    color: #8a929d;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   MAIN BOOKING CARD
+   ========================================================= */
+
+.booking-wrapper {
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        270px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e5e9;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.06);
+
+}
+
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+.booking-details {
+
+    padding: 38px 42px;
+
+}
+
+
+/* =========================================================
+   MOVIE
+   ========================================================= */
+
+.movie-section {
+
+    margin-bottom: 30px;
+
+}
+
+
+.detail-label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #9aa1aa;
+
+}
+
+
+.movie-section h2 {
+
+    margin: 0;
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    color: #1f2937;
+
+}
+
+
+/* =========================================================
+   DETAIL ROW
+   ========================================================= */
+
+.detail-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
+
+}
+
+
+.detail-item {
+
+    padding: 5px 0;
+
+}
+
+
+.detail-item p {
+
+    margin: 0;
+
+    font-size: 16px;
+
+    font-weight: 650;
+
+    color: #303846;
+
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.booking-divider {
+
+    height: 1px;
+
+    background: #e8eaed;
+
+    margin: 30px 0;
+
+}
+
+
+/* =========================================================
+   CUSTOMER SECTION
+   ========================================================= */
+
+.section-title {
+
+    font-size: 18px;
+
+    font-weight: 750;
+
+    color: #252c35;
+
+    margin-bottom: 22px;
+
+}
+
+
+.input-group {
+
+    margin-bottom: 19px;
+
+}
+
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+    font-weight: 650;
+
+    color: #454d58;
+
+}
+
+
+.input-group input {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d9dde2;
+
+    border-radius: 8px;
+
+    background: #fafbfc;
+
+    color: #252c35;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+.input-group input::placeholder {
+
+    color: #a3a9b1;
+
+}
+
+
+.input-group input:focus {
+
+    background: #ffffff;
+
+    border-color: #e50914;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(229, 9, 20, 0.08);
+
+}
+
+
+/* =========================================================
+   RIGHT SIDE — TICKET
+   ========================================================= */
+
+.booking-summary {
+
+    position: relative;
+
+    padding: 35px 28px;
+
+    background: #fafbfc;
+
+    border-left: 1px dashed #d4d8de;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+/* =========================================================
+   TICKET CUTOUTS
+   ========================================================= */
+
+.booking-summary::before,
+.booking-summary::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 24px;
+
+    height: 24px;
+
+    background: #f6f7f9;
+
+    border: 1px solid #e2e5e9;
+
+    border-radius: 50%;
+
+    left: -13px;
+
+}
+
+
+.booking-summary::before {
+
+    top: -13px;
+
+}
+
+
+.booking-summary::after {
+
+    bottom: -13px;
+
+}
+
+
+/* =========================================================
+   TICKET TITLE
+   ========================================================= */
+
+.summary-title {
+
+    text-align: center;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #626b76;
+
+}
+
+
+.ticket-line {
+
+    width: 35px;
+
+    height: 2px;
+
+    background: #e50914;
+
+    margin: 13px auto 28px;
+
+}
+
+
+/* =========================================================
+   TOTAL
+   ========================================================= */
+
+.summary-content {
+
+    text-align: center;
+
+}
+
+
+.summary-label {
+
+    display: block;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 700;
+
+    color: #9aa1aa;
+
+    margin-bottom: 8px;
+
+}
+
+
+.total-price {
+
+    font-size: 32px;
+
+    font-weight: 850;
+
+    color: #1f2937;
+
+}
+
+
+/* =========================================================
+   TICKET DIVIDER
+   ========================================================= */
+
+.ticket-divider {
+
+    height: 1px;
+
+    background: #e1e4e8;
+
+    margin: 25px 0;
+
+}
+
+
+/* =========================================================
+   NOTE
+   ========================================================= */
+
+.ticket-note {
+
+    text-align: center;
+
+    color: #7a838e;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================================================
+   CONFIRM BUTTON
+   ========================================================= */
+
+.confirm-btn {
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 13px 18px;
+
+    background: #e50914;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.confirm-btn:hover {
+
+    background: #c90812;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 7px 16px
+        rgba(229, 9, 20, 0.2);
+
+}
+
+
+.confirm-btn:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================================
+   BACK TO MOVIES
+   ========================================================= */
+
+.back-home {
+
+    max-width: 1000px;
+
+    margin: 22px auto 0;
+
+}
+
+
+.back-home a {
+
+    display: inline-block;
+
+    padding: 10px 16px;
+
+    border: 1px solid #e0e3e7;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #5f6873;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+
+}
+
+
+.back-home a:hover {
+
+    background: #fff5f5;
+
+    color: #e50914;
+
+    border-color: #f1c7ca;
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .booking-page {
+
+        padding:
+            40px 25px 60px;
+
+    }
+
+
+    .booking-wrapper {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            230px;
+
+    }
+
+
+    .booking-details {
+
+        padding: 30px;
+
+    }
+
+
+    .booking-summary {
+
+        padding: 30px 20px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .booking-page {
+
+        padding:
+            30px 15px 50px;
+
+    }
+
+
+    .booking-header {
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .booking-header h1 {
+
+        font-size: 28px;
+
+    }
+
+
+    .booking-header p {
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .booking-wrapper {
+
+        display: block;
+
+        border-radius: 12px;
+
+    }
+
+
+    .booking-details {
+
+        padding: 25px 20px;
+
+    }
+
+
+    .movie-section h2 {
+
+        font-size: 24px;
+
+    }
+
+
+    .detail-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+    }
+
+
+    .booking-summary {
+
+        border-left: none;
+
+        border-top: 1px dashed #d4d8de;
+
+        padding: 28px 20px;
+
+    }
+
+
+    .booking-summary::before,
+    .booking-summary::after {
+
+        left: 50%;
+
+        transform: translateX(-50%);
+
+    }
+
+
+    .booking-summary::before {
+
+        top: -13px;
+
+    }
+
+
+    .booking-summary::after {
+
+        bottom: -13px;
+
+    }
+
+
+    .back-home {
+
+        margin-top: 18px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .booking-page {
+
+        padding-left: 10px;
+
+        padding-right: 10px;
+
+    }
+
+
+    .booking-details {
+
+        padding: 22px 17px;
+
+    }
+
+
+    .booking-summary {
+
+        padding: 25px 17px;
+
+    }
+
+}

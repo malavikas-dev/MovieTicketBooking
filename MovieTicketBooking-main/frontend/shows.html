@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Showtimes - MovieBook</title>
+
+    <link rel="stylesheet" href="./css/style.css?v=3">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🎬 MovieBook
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="movies.html">Movies</a>
+
+            <a href="history.html">My Bookings</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= SHOWTIME PAGE ================= -->
+
+    <section class="showtime-page">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="showtime-header">
+
+            <h1>
+                Select Showtime
+            </h1>
+
+            <p>
+                Choose your preferred showtime
+            </p>
+
+        </div>
+
+
+        <!-- DATE BAR -->
+
+        <div class="date-bar">
+
+            <div class="date-item active">
+
+                <span class="date-day">
+                    MON
+                </span>
+
+                <strong>
+                    05
+                </strong>
+
+                <span class="date-month">
+                    OCT
+                </span>
+
+            </div>
+
+
+            <div class="date-item">
+
+                <span class="date-day">
+                    TUE
+                </span>
+
+                <strong>
+                    06
+                </strong>
+
+                <span class="date-month">
+                    OCT
+                </span>
+
+            </div>
+
+
+            <div class="date-item">
+
+                <span class="date-day">
+                    WED
+                </span>
+
+                <strong>
+                    07
+                </strong>
+
+                <span class="date-month">
+                    OCT
+                </span>
+
+            </div>
+
+
+            <div class="date-item">
+
+                <span class="date-day">
+                    THU
+                </span>
+
+                <strong>
+                    08
+                </strong>
+
+                <span class="date-month">
+                    OCT
+                </span>
+
+            </div>
+
+
+            <div class="date-item">
+
+                <span class="date-day">
+                    FRI
+                </span>
+
+                <strong>
+                    09
+                </strong>
+
+                <span class="date-month">
+                    OCT
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- FILTER BAR -->
+
+        <div class="show-filter-bar">
+
+            <span>
+                🎬 Malayalam
+            </span>
+
+            <span>
+                ◉ 2D
+            </span>
+
+            <span>
+                Price Range
+            </span>
+
+            <span>
+                Preferred Time
+            </span>
+
+        </div>
+
+
+        <!-- SHOW LIST -->
+
+        <div id="showList"
+             class="show-list">
+
+            <div class="loading">
+                Loading shows...
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ================= SCRIPTS ================= -->
+
+    <script src="js/config.js"></script>
+
+    <script src="js/api.js"></script>
+
+    <script src="js/shows.js"></script>
+
+</body>
+
+</html>

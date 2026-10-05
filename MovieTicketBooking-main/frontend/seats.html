@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Select Seats - MovieBook</title>
+
+    <link rel="stylesheet" href="css/style.css">
+<style>
+/* =====================================================
+   SEAT COUNT MODAL - FINAL OVERRIDE
+   ===================================================== */
+
+.seat-count-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: rgba(0, 0, 0, 0.55) !important;
+
+    z-index: 99999 !important;
+
+    padding: 20px !important;
+
+    box-sizing: border-box !important;
+}
+
+.seat-count-overlay.hidden {
+    display: none !important;
+}
+
+.seat-count-modal {
+    width: 420px !important;
+    max-width: 92vw !important;
+
+    background: #ffffff !important;
+
+    border-radius: 18px !important;
+
+    padding: 30px !important;
+
+    box-sizing: border-box !important;
+
+    text-align: center !important;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.3) !important;
+}
+
+.seat-count-modal h2 {
+    margin: 0 0 20px !important;
+
+    font-size: 24px !important;
+    font-weight: 700 !important;
+
+    color: #222 !important;
+}
+
+.seat-count-image {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    height: 65px !important;
+
+    margin-bottom: 15px !important;
+
+    font-size: 46px !important;
+}
+
+.seat-count-options {
+    display: grid !important;
+
+    grid-template-columns: repeat(5, 1fr) !important;
+
+    gap: 9px !important;
+
+    margin: 15px 0 22px !important;
+}
+
+.seat-count-option {
+    height: 40px !important;
+
+    border: 1px solid #d8d8d8 !important;
+
+    border-radius: 7px !important;
+
+    background: #ffffff !important;
+
+    color: #444 !important;
+
+    font-size: 14px !important;
+    font-weight: 600 !important;
+
+    cursor: pointer !important;
+}
+
+.seat-count-option:hover {
+    border-color: #e50914 !important;
+}
+
+.seat-count-option.active {
+    background: #e50914 !important;
+
+    border-color: #e50914 !important;
+
+    color: #ffffff !important;
+}
+
+.seat-category-preview {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 20px !important;
+
+    padding: 15px 0 !important;
+
+    border-top: 1px solid #eeeeee !important;
+    border-bottom: 1px solid #eeeeee !important;
+}
+
+.category-item {
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    gap: 3px !important;
+
+    min-width: 105px !important;
+
+    text-align: center !important;
+}
+
+.category-item span {
+    font-size: 12px !important;
+
+    color: #777 !important;
+}
+
+.category-item strong {
+    font-size: 17px !important;
+
+    color: #222 !important;
+}
+
+.category-item small {
+    font-size: 11px !important;
+
+    color: #999 !important;
+}
+
+.category-arrow {
+    color: #aaa !important;
+
+    font-size: 25px !important;
+}
+
+.seat-count-info {
+    margin: 18px 0 !important;
+
+    color: #777 !important;
+
+    font-size: 13px !important;
+}
+
+.select-seats-modal-btn {
+    width: 100% !important;
+
+    height: 46px !important;
+
+    border: none !important;
+
+    border-radius: 7px !important;
+
+    background: #e50914 !important;
+
+    color: white !important;
+
+    font-size: 14px !important;
+
+    font-weight: 700 !important;
+
+    cursor: pointer !important;
+}
+</style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🎬 MovieBook
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="movies.html">Movies</a>
+
+            <a href="history.html">My Bookings</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =================================================
+         HOW MANY SEATS MODAL
+         ================================================= -->
+
+    <div id="seatCountModal"
+         class="seat-count-overlay">
+
+        <div class="seat-count-modal">
+
+
+            <h2>
+                How many seats?
+            </h2>
+
+
+            <!-- Scooter -->
+
+            <div class="seat-count-image">
+                🛵
+            </div>
+
+
+            <!-- Seat Numbers -->
+
+            <div id="seatCountOptions"
+                 class="seat-count-options">
+
+                <button
+                    class="seat-count-option"
+                    data-count="1">
+                    1
+                </button>
+
+                <button
+                    class="seat-count-option"
+                    data-count="2">
+                    2
+                </button>
+
+                <button
+                    class="seat-count-option"
+                    data-count="3">
+                    3
+                </button>
+
+                <button
+                    class="seat-count-option"
+                    data-count="4">
+                    4
+                </button>
+
+                <button
+                    class="seat-count-option"
+                    data-count="5">
+                    5
+                </button>
+
+                <button
+                    class="seat-count-option"
+                    data-count="6">
+                    6
+                </button>
+
+                <button
+                    class="seat-count-option"
+                    data-count="7">
+                    7
+                </button>
+
+                <button
+                    class="seat-count-option"
+                    data-count="8">
+                    8
+                </button>
+
+                <button
+                    class="seat-count-option"
+                    data-count="9">
+                    9
+                </button>
+
+                <button
+                    class="seat-count-option"
+                    data-count="10">
+                    10
+                </button>
+
+            </div>
+
+
+            <!-- Seat Categories -->
+
+            <div class="seat-category-preview">
+
+                <div class="category-item">
+
+                    <span>
+                        Premium Seats
+                    </span>
+
+                    <strong>
+                        ₹<span id="premiumPreviewPrice">
+                            0
+                        </span>
+                    </strong>
+
+                    <small>
+                        Available
+                    </small>
+
+                </div>
+
+
+                <div class="category-item">
+
+                    <span>
+                        Regular Seats
+                    </span>
+
+                    <strong>
+                        ₹<span id="regularPreviewPrice">
+                            0
+                        </span>
+                    </strong>
+
+                    <small>
+                        Available
+                    </small>
+
+                </div>
+
+
+                <div class="category-arrow">
+                    ›
+                </div>
+
+            </div>
+
+
+            <!-- Info -->
+
+            <div class="seat-count-info">
+
+                Select up to
+                <strong>10 seats</strong>
+                per booking.
+
+            </div>
+
+
+            <!-- Button -->
+
+            <button
+                id="confirmSeatCount"
+                class="select-seats-modal-btn">
+
+                Select Seats
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         SEAT SELECTION PAGE
+         ================================================= -->
+
+    <section class="section seat-selection-section">
+
+
+        <div class="seat-page-header">
+
+            <h2>
+                Select Your Seats
+            </h2>
+
+            <p>
+                Showtime:
+                <strong id="showTime"></strong>
+            </p>
+
+            <p class="seat-limit-text">
+
+                Select
+                <strong id="seatLimitText">
+                    0
+                </strong>
+                seat(s)
+
+            </p>
+
+        </div>
+
+
+        <!-- Screen -->
+
+        <div class="cinema-screen">
+
+            <div class="screen-shape"></div>
+
+            <span>
+                SCREEN
+            </span>
+
+        </div>
+
+
+        <!-- Legend -->
+
+        <div class="legend seat-legend">
+
+            <span>
+                <i class="legend-box available-box"></i>
+                Available
+            </span>
+
+            <span>
+                <i class="legend-box booked-box"></i>
+                Sold
+            </span>
+
+            <span>
+                <i class="legend-box selected-box"></i>
+                Selected
+            </span>
+
+        </div>
+
+<!-- Cinema Seat Layout -->
+
+<div class="cinema-layout">
+
+    <!-- SCREEN -->
+
+    <div class="screen-area">
+        <div class="screen"></div>
+        <p>SCREEN</p>
+    </div>
+
+
+    <!-- PREMIUM SECTION -->
+
+    <div class="seat-category">
+
+        <h3>₹140 PREMIUM ROWS</h3>
+
+        <div id="premiumSeats" class="seat-section">
+        </div>
+
+    </div>
+
+
+    <!-- CLASSIC SECTION -->
+
+    <div class="seat-category">
+
+        <h3>₹120 CLASSIC ROWS</h3>
+
+        <div id="classicSeats" class="seat-section">
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- =================================================
+     BOOKING SUMMARY
+     ================================================= -->
+
+<div class="seat-summary">
+
+    <div class="summary-left">
+
+        <div>
+            <strong>Selected Seats</strong>
+        </div>
+
+        <div id="selectedSeats">
+            None
+        </div>
+
+    </div>
+
+
+    <div class="summary-right">
+
+        <div class="seat-summary-total">
+
+            ₹<span id="totalAmount">
+                0
+            </span>
+
+        </div>
+
+
+        <button
+            id="continueBookingBtn"
+            class="continue-seat-btn"
+            onclick="continueToBooking()"
+            disabled>
+
+            Continue
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= SCRIPTS ================= -->
+
+<script src="js/config.js"></script>
+
+<script src="js/api.js"></script>
+
+<script src="js/seats.js"></script>
